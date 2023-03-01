@@ -11,10 +11,10 @@ export default function Result(){
 const Footer = styled.div`
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
 
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     bottom: 0;
     left: 0;
     height: 70px;
