@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export default function Result(){
+export default function Result({result}){
     return(
         <Footer>
-            <p>0/4 Concluidos</p>
+            <p>{result}/4 Concluidos</p>
         </Footer>
     )
 }
@@ -12,6 +12,7 @@ const Footer = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 10vh;
 
     position: fixed;
     z-index: 10;
@@ -25,4 +26,14 @@ const Footer = styled.div`
     p {
         font-family: 'Recursive', sans-serif;;
     }
+`
+
+const ContainerQuestions = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100vw;
+
+    align-items: center;
+    margin-top: 50px;
 `
