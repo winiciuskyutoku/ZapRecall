@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export default function Result({result}){
     return(
-        <Footer>
-            <p data-test="footer">{result}/4 Concluidos</p>
+        <Footer data-test="footer">
+            <p >{result}/4 Concluidos</p>
         </Footer>
     )
 }
