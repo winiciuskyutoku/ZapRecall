@@ -41,7 +41,7 @@ export default function CardQuestion(props) {
                     <h1 data-test="flashcard-text">{props.answer}</h1>
                     <AnswerButton>
                         <button onClick={() => remember("wrong")} data-test="no-btn">Não lembrei</button>
-                        <button onClick={() => remember("almostWrong")} data-test="partial-btn">Quase não lembro</button>
+                        <button onClick={() => remember("almostWrong")} data-test="partial-btn">Quase Não Lembrei</button>
                         <button onClick={() => remember("correct")} data-test="zap-btn">Zap!</button>
                     </AnswerButton>
                 </AnswerContainer>
@@ -61,7 +61,7 @@ export default function CardQuestion(props) {
             setText (
                 <>
                     <h1 data-test="flashcard-text">Pergunta {num}</h1>
-                    <img src={wrong} alt="Virar o card" ></img>
+                    <img src={wrong} alt="Virar o card" data-test="no-icon"></img>
                 </>
             )
         } else if (event === "almostWrong") {
@@ -70,7 +70,7 @@ export default function CardQuestion(props) {
             setText (
                 <>
                     <h1 data-test="flashcard-text">Pergunta {num}</h1>
-                    <img src={almostWrong} alt="Virar o card" ></img>
+                    <img src={almostWrong} alt="Virar o card" data-test="partial-icon"></img>
                 </>
             )
         } else if (event === "correct") {
@@ -79,7 +79,7 @@ export default function CardQuestion(props) {
             setText (
                 <>
                     <h1 data-test="flashcard-text">Pergunta {num}</h1>
-                    <img src={right} alt="Virar o card" ></img>
+                    <img src={right} alt="Virar o card" data-test="zap-icon"></img>
                 </>
             )
         }
