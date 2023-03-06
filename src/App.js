@@ -10,6 +10,8 @@ function App() {
 
   const [counter, setCounter] = React.useState([])
 
+ 
+ 
   return (
     <Body>
       <Logo></Logo>
@@ -18,8 +20,8 @@ function App() {
           return <Card num={i + 1} key={i} question={e.question} answer={e.answer} cards={cards} setCounter={setCounter} counter={counter}></Card>
         })}
       </ContainerQuestions>
-      <Footer>
-        <p>{counter}/{cards.length} Concluidos</p>
+      <Footer data-test="footer">
+        <p>{counter.length === 0 ? counter.length : counter}/{cards.length} Concluidos</p>
       </Footer>
     </Body>
   );

@@ -9,6 +9,9 @@ import right from "../assets/icone_certo.png"
 export default function CardQuestion(props) {
     const { num, counter, setCounter } = props
 
+    
+
+
     let initialText = (
         <>
             <h1 data-test="flashcard-text">Pergunta {num}</h1>
@@ -86,8 +89,7 @@ export default function CardQuestion(props) {
 
     return (
         <>
-            <Question data-test="flashcard" clicked={clicked} decoration={decoration}>{text}</Question>
-            
+            <Question data-test="flashcard" clicked={clicked} decoration={decoration}>{text}</Question>  
         </>
     )
 
