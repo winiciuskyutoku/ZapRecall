@@ -11,8 +11,8 @@ export default function CardQuestion(props) {
 
     let initialText = (
         <>
-            <h1>Pergunta {num}</h1>
-            <img src={playButton} alt="Virar o card" onClick={showQuestion}></img>
+            <h1 data-test="flashcard-text">Pergunta {num}</h1>
+            <img src={playButton} alt="Virar o card" onClick={showQuestion} data-test="play-btn"></img>
         </>
     )
 
@@ -24,8 +24,8 @@ export default function CardQuestion(props) {
         setClicked("question")
         setText(
             <>
-                <h1>{props.question}</h1>
-                <img src={turnArrow} alt="Virar o card" onClick={showAnswer}></img>
+                <h1 data-test="flashcard-text">{props.question}</h1>
+                <img src={turnArrow} alt="Virar o card" onClick={showAnswer} data-test="turn-btn"></img>
             </>
         )
     }
@@ -35,11 +35,11 @@ export default function CardQuestion(props) {
         setText(
             <>
                 <AnswerContainer>
-                    <h1>{props.answer}</h1>
+                    <h1 data-test="flashcard-text">{props.answer}</h1>
                     <AnswerButton>
-                        <button onClick={() => remember("wrong")}>Não lembrei</button>
-                        <button onClick={() => remember("almostWrong")}>Quase não lembro</button>
-                        <button onClick={() => remember("correct")}>Zap!</button>
+                        <button onClick={() => remember("wrong")} data-test="no-btn">Não lembrei</button>
+                        <button onClick={() => remember("almostWrong")} data-test="partial-btn">Quase não lembro</button>
+                        <button onClick={() => remember("correct")} data-test="zap-btn">Zap!</button>
                     </AnswerButton>
                 </AnswerContainer>
             </>
@@ -57,7 +57,7 @@ export default function CardQuestion(props) {
             setDecoration("wrong")
             setText (
                 <>
-                    <h1>Pergunta {num}</h1>
+                    <h1 data-test="flashcard-text">Pergunta {num}</h1>
                     <img src={wrong} alt="Virar o card" ></img>
                 </>
             )
@@ -66,7 +66,7 @@ export default function CardQuestion(props) {
             setDecoration("almostWrong")
             setText (
                 <>
-                    <h1>Pergunta {num}</h1>
+                    <h1 data-test="flashcard-text">Pergunta {num}</h1>
                     <img src={almostWrong} alt="Virar o card" ></img>
                 </>
             )
@@ -75,7 +75,7 @@ export default function CardQuestion(props) {
             setDecoration("right")
             setText (
                 <>
-                    <h1>Pergunta {num}</h1>
+                    <h1 data-test="flashcard-text">Pergunta {num}</h1>
                     <img src={right} alt="Virar o card" ></img>
                 </>
             )
@@ -86,7 +86,7 @@ export default function CardQuestion(props) {
 
     return (
         <>
-            <Question clicked={clicked} decoration={decoration}>{text}</Question>
+            <Question data-test="flashcard" clicked={clicked} decoration={decoration}>{text}</Question>
             
         </>
     )

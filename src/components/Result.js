@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Result({result}){
     return(
         <Footer>
-            <p>{result}/4 Concluidos</p>
+            <p data-test="footer">{result}/4 Concluidos</p>
         </Footer>
     )
 }
