@@ -7,7 +7,7 @@ import almostWrong from "../assets/icone_quase.png"
 import right from "../assets/icone_certo.png"
 
 export default function CardQuestion(props) {
-    const { num, counter, setCounter } = props
+    const { num, counter, setCounter, misses, setMisses } = props
 
     
 
@@ -51,9 +51,9 @@ export default function CardQuestion(props) {
 
     function remember(event) {
 
+        misses.push(event)
         counter.push(event)
         setCounter(counter.length)
-        console.log(counter)
         
         if (event === "wrong") {
             setClicked("")
